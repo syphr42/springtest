@@ -17,6 +17,6 @@ public class Reverse
     @Produces(MediaType.APPLICATION_JSON)
     public String get(@PathParam("input") @NotNull String input)
     {
-        return "{ result: \"" + new StringBuilder(input).reverse().append("\" }").toString();
+        return "{ \"result\": \"" + new StringBuilder(input).reverse().append("\" }").toString();
     }
 }
