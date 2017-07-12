@@ -8,6 +8,7 @@ import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
 
 import org.syphr.springtest.api.Colors;
+import org.syphr.springtest.api.Pets;
 import org.syphr.springtest.api.Reverse;
 
 public class Api
@@ -22,6 +23,7 @@ public class Api
         baseUri = uriInfo.getAbsolutePath();
 
         endpoints.put("colors", UriBuilder.fromUri(baseUri).path(Colors.class).toTemplate());
+        endpoints.put("pets", UriBuilder.fromUri(baseUri).path(Pets.class).toTemplate());
         endpoints.put("reverse", UriBuilder.fromUri(baseUri).path(Reverse.class).toTemplate());
     }
 
