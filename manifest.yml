@@ -6,3 +6,5 @@ applications:
   routes:
   - route: syphr-springtest.cfapps.io
   path: target/springtest-0.1.0-SNAPSHOT.jar
+  services:
+  - syphr-springtest-mongo
