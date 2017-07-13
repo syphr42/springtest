@@ -7,3 +7,4 @@ applications:
   - route: syphr-springtest.cfapps.io
   services:
   - syphr-springtest-mongo
+  - syphr-springtest-postgresql
