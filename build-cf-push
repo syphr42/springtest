@@ -2,5 +2,10 @@
 
 set -e
 
+mvn help:effective-pom -Doutput=target/effective-pom.xml
+DIR=$(cat target/effective-pom.xml | sed 's/xmlns=".*"//g' | xmllint --xpath '//project/build/directory/text()' -)
+NAME=$(cat target/effective-pom.xml | sed 's/xmlns=".*"//g' | xmllint --xpath '//project/build/finalName/text()' -)
+PACKAGING=$(cat pom.xml | sed 's/xmlns=".*"//g' | xmllint --xpath '//project/packaging/text()' -)
+
 mvn clean package
-cf push
+cf push -p ${DIR}/${NAME}.${PACKAGING}
